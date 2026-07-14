@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  니가 교수 · 소개서 (공통 척추) v2
+  ------------------------------------------------------------
+  ▶ 대표님이 직접 글자 고치는 법
+    1) github.com 에서 이 파일(index.html)을 엽니다
+    2) 오른쪽 위 연필(✏️) 아이콘을 누릅니다
+    3) 아래 "◆◆◆" 로 표시된 구역을 찾아 한글만 바꾸세요
+       (< > 같은 기호는 건드리지 마세요)
+    4) 초록색 "Commit changes" 버튼을 누르면 1~2분 뒤 사이트에 반영됩니다
+  ============================================================
+-->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>니가 교수 · 소개서</title>
+<style>
+  :root{
+    --bg:#F4F8FD; --panel:#EBF2FB; --card:#FFFFFF;
+    --ink:#141F36; --ink2:#42536E; --muted:#7B8AA3;
+    --line:#E6EDF7; --line2:#D8E3F2;
+    --brand:#2F6BF6; --brand-ink:#1B57DD; --brand-wash:#E8F1FE; --brand-wash2:#D6E6FD;
+    --mint:#10B981; --mint-ink:#0C9C6E; --mint-wash:#E4F7EF;
+    --coral:#FB6D5D; --coral-wash:#FDECE9;
+    --gold:#EEA53A;
+    --pencil:#33436A;
+    --sh-s:0 4px 16px -8px rgba(20,31,54,.20);
+    --sh:0 22px 48px -22px rgba(20,31,54,.26), 0 8px 20px -14px rgba(20,31,54,.12);
+    --sh-l:0 40px 90px -34px rgba(20,31,54,.40);
+    --r-xl:30px; --r-lg:24px; --r-md:16px; --r-sm:12px;
+    --ease:cubic-bezier(.22,.7,0,1);
+    --f:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+    --hand:"Segoe Script","Bradley Hand","Apple SD Gothic Neo","Malgun Gothic",cursive;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0C1220; --panel:#111A2B; --card:#152238;
+      --ink:#EAF1FB; --ink2:#AEBCD3; --muted:#7788A3;
+      --line:#22314D; --line2:#2A3B5B;
+      --brand:#5A97FF; --brand-ink:#9DC1FF; --brand-wash:#172848; --brand-wash2:#1D335A;
+      --mint:#2FD8A4; --mint-ink:#5FE6BE; --mint-wash:#123326;
+      --coral:#FF8577; --coral-wash:#3A211D;
+      --pencil:#C6D3EC;
+      --sh-s:0 4px 16px -8px rgba(0,0,0,.55);
+      --sh:0 24px 52px -24px rgba(0,0,0,.7), 0 8px 20px -14px rgba(0,0,0,.5);
+      --sh-l:0 44px 96px -38px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="light"]{ --bg:#F4F8FD; --panel:#EBF2FB; --card:#FFFFFF; --ink:#141F36; --ink2:#42536E; --muted:#7B8AA3; --line:#E6EDF7; --line2:#D8E3F2; --brand:#2F6BF6; --brand-ink:#1B57DD; --brand-wash:#E8F1FE; --brand-wash2:#D6E6FD; --mint:#10B981; --mint-ink:#0C9C6E; --mint-wash:#E4F7EF; --coral:#FB6D5D; --coral-wash:#FDECE9; --pencil:#33436A; --sh-s:0 4px 16px -8px rgba(20,31,54,.20); --sh:0 22px 48px -22px rgba(20,31,54,.26),0 8px 20px -14px rgba(20,31,54,.12); --sh-l:0 40px 90px -34px rgba(20,31,54,.40); }
+  :root[data-theme="dark"]{ --bg:#0C1220; --panel:#111A2B; --card:#152238; --ink:#EAF1FB; --ink2:#AEBCD3; --muted:#7788A3; --line:#22314D; --line2:#2A3B5B; --brand:#5A97FF; --brand-ink:#9DC1FF; --brand-wash:#172848; --brand-wash2:#1D335A; --mint:#2FD8A4; --mint-ink:#5FE6BE; --mint-wash:#123326; --coral:#FF8577; --coral-wash:#3A211D; --pencil:#C6D3EC; --sh-s:0 4px 16px -8px rgba(0,0,0,.55); --sh:0 24px 52px -24px rgba(0,0,0,.7),0 8px 20px -14px rgba(0,0,0,.5); --sh-l:0 44px 96px -38px rgba(0,0,0,.8); }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{background:var(--bg); color:var(--ink); font-family:var(--f); line-height:1.66; letter-spacing:-.01em; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{margin:0; letter-spacing:-.03em; line-height:1.16; text-wrap:balance;}
+  p{margin:0;}
+  a{color:inherit;}
+
+  /* ---------- top nav (tabs) ---------- */
+  header{position:sticky; top:0; z-index:50; display:flex; justify-content:center; padding:14px 12px;
+    background:linear-gradient(var(--bg),color-mix(in srgb,var(--bg) 40%,transparent));}
+  .tabs{display:flex; gap:3px; align-items:center; background:color-mix(in srgb,var(--card) 84%,transparent);
+    backdrop-filter:blur(20px) saturate(1.5); -webkit-backdrop-filter:blur(20px) saturate(1.5);
+    border:1px solid var(--line2); box-shadow:var(--sh-s); padding:6px; border-radius:999px;
+    max-width:100%; overflow-x:auto; scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tabs button{flex:0 0 auto; font-family:inherit; font-size:13.5px; font-weight:600; color:var(--ink2);
+    background:none; border:none; cursor:pointer; padding:9px 16px; border-radius:999px; white-space:nowrap;
+    transition:color .3s var(--ease), background .3s var(--ease);}
+  .tabs button:hover{color:var(--ink); background:var(--brand-wash);}
+  .tabs button[aria-current="true"]{color:#fff; background:var(--brand); font-weight:700;}
+  .tabs .logo{display:flex; align-items:center; gap:7px; padding-left:8px; padding-right:6px; font-weight:800; color:var(--ink); font-size:13.5px;}
+  .tabs .logo .mk{width:20px; height:20px; border-radius:7px; background:var(--brand); display:grid; place-items:center; color:#fff; font-size:12px; font-weight:800;}
+  @media(max-width:560px){ .tabs .logo span{display:none;} }
+
+  /* ---------- pages ---------- */
+  main{max-width:1060px; margin:0 auto; padding:0 22px;}
+  .page{display:none; padding:38px 0 90px; min-height:60vh;}
+  .page.active{display:block;}
+  .page.active .rv{animation:rise .7s var(--ease) both;}
+  .page.active .rv:nth-child(2){animation-delay:.05s;}
+  .page.active .rv:nth-child(3){animation-delay:.10s;}
+  .page.active .rv:nth-child(4){animation-delay:.15s;}
+  .page.active .rv:nth-child(5){animation-delay:.20s;}
+  @keyframes rise{from{opacity:0; transform:translateY(20px); filter:blur(5px);} to{opacity:1; transform:none; filter:none;}}
+  @media(prefers-reduced-motion:reduce){ .page.active .rv{animation:none;} }
+
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.18em; color:var(--brand-ink); background:var(--brand-wash); padding:7px 14px; border-radius:999px;}
+  .eyebrow.mint{color:var(--mint-ink); background:var(--mint-wash);}
+  .eyebrow.coral{color:#C6412F; background:var(--coral-wash);}
+  :root[data-theme="dark"] .eyebrow.coral{color:var(--coral);}
+  .h-title{font-weight:800; font-size:clamp(27px,4.6vw,40px); margin:16px 0 14px;}
+  .h-sub{color:var(--ink2); font-size:17px; max-width:640px;}
+
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--sh); padding:30px;}
+  .grid{display:grid; gap:18px;}
+  @media(min-width:800px){ .g3{grid-template-columns:repeat(3,1fr);} .g2{grid-template-columns:1fr 1fr;} }
+
+  /* nextbar */
+  .nextbar{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:44px; padding-top:26px; border-top:1px solid var(--line2);}
+  .btn{display:inline-flex; align-items:center; gap:11px; font-family:inherit; font-size:14.5px; font-weight:700; cursor:pointer;
+    border:none; border-radius:999px; padding:13px 15px 13px 22px; transition:transform .3s var(--ease), background .3s var(--ease);}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:var(--brand); color:#fff;}
+  .btn.primary:hover{background:var(--brand-ink);}
+  .btn.ghost{background:var(--card); color:var(--ink2); border:1px solid var(--line2); padding:13px 22px;}
+  .btn .ic{width:30px; height:30px; border-radius:999px; background:rgba(255,255,255,.2); display:grid; place-items:center; transition:transform .3s var(--ease);}
+  .btn.primary:hover .ic{transform:translateX(3px);}
+  .btn .ic svg{width:15px; height:15px; stroke:#fff; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
+
+  /* ---------- HOME ---------- */
+  .home-wrap{display:grid; gap:40px; align-items:center;}
+  @media(min-width:860px){ .home-wrap{grid-template-columns:1.05fr .95fr;} }
+  .home .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
+  .chip{font-size:12px; font-weight:600; color:var(--ink2); background:var(--card); border:1px solid var(--line2); border-radius:999px; padding:6px 13px; box-shadow:var(--sh-s);}
+  .chip b{color:var(--brand-ink);}
+  .home h1{font-size:clamp(33px,6vw,58px); font-weight:800; letter-spacing:-.045em; line-height:1.1;}
+  .home h1 .hl{color:var(--brand);}
+  .home .tag{margin-top:20px; font-size:clamp(16px,2.2vw,19px); color:var(--ink2); max-width:520px;}
+  .home .north{margin-top:26px; display:flex; gap:12px; background:var(--brand-wash); border-radius:var(--r-md); padding:15px 18px; max-width:540px;}
+  .home .north .s{flex:0 0 auto; width:24px; height:24px; border-radius:8px; background:var(--brand); display:grid; place-items:center; margin-top:2px; color:#fff; font-size:13px;}
+  .home .north p{font-size:14px; color:var(--ink2);}
+  .home .north b{color:var(--ink);}
+
+  /* phone mockup */
+  .phone{position:relative; width:290px; max-width:78vw; margin:0 auto; aspect-ratio:290/600; background:#0E1626;
+    border-radius:44px; padding:11px; box-shadow:var(--sh-l); border:1px solid rgba(255,255,255,.08);}
+  .phone::before{content:""; position:absolute; top:20px; left:50%; transform:translateX(-50%); width:96px; height:22px; background:#0E1626; border-radius:999px; z-index:3;}
+  .screen{position:relative; width:100%; height:100%; background:linear-gradient(180deg,#FBFCFE,#F0F5FC); border-radius:34px; overflow:hidden; display:flex; flex-direction:column;}
+  .sc-top{padding:30px 18px 12px; display:flex; align-items:center; gap:9px;}
+  .sc-top .av{width:30px; height:30px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:13px; font-weight:800;}
+  .sc-top .nm{font-size:13px; font-weight:800; color:#141F36;}
+  .sc-top .st{font-size:10.5px; color:#0C9C6E; font-weight:700;}
+  .paper{margin:4px 14px 0; background:#fff; border-radius:16px; padding:16px 15px; box-shadow:0 8px 20px -12px rgba(20,31,54,.25);
+    background-image:linear-gradient(#EAF0FA 1px,transparent 1px); background-size:100% 27px; background-position:0 30px;}
+  .paper .q{font-size:12px; color:#7B8AA3; font-weight:700; margin-bottom:8px;}
+  .hw{font-family:var(--hand); color:var(--pencil); font-size:19px; line-height:27px; letter-spacing:.5px;}
+  .hw .flag{position:relative; display:inline-block; color:#C6412F;}
+  .hw .flag::after{content:""; position:absolute; inset:-4px -6px; border:2px solid var(--coral); border-radius:50%; transform:rotate(-4deg);}
+  .bubble{margin:12px 14px 0; background:var(--brand); color:#fff; border-radius:16px 16px 16px 5px; padding:12px 14px; font-size:12.5px; line-height:1.5; box-shadow:0 10px 22px -12px rgba(47,107,246,.7);}
+  .bubble b{font-weight:800;}
+  .sc-input{margin:auto 14px 20px; display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #E1E9F5; border-radius:999px; padding:9px 9px 9px 15px;}
+  .sc-input span{font-size:12px; color:#9AA7BE; flex:1;}
+  .sc-input .go{width:28px; height:28px; border-radius:999px; background:var(--brand); display:grid; place-items:center; color:#fff; font-size:13px;}
+
+  /* value strip on home */
+  .valuestrip{margin-top:8px;}
+
+  /* ---------- WHY ---------- */
+  .why-card{display:flex; gap:20px; align-items:flex-start; padding:26px 28px;}
+  .why-card+.why-card{margin-top:16px;}
+  .why-card .n{flex:0 0 auto; width:36px; height:36px; border-radius:11px; background:var(--brand-wash); color:var(--brand); font-weight:800; font-size:16px; display:grid; place-items:center;}
+  .why-card h3{font-size:19px; font-weight:800; margin-bottom:9px;}
+  .why-card p{color:var(--ink2); font-size:15.5px;}
+  .softnote{margin-top:20px; font-size:13px; color:var(--muted); background:var(--panel); border-radius:var(--r-md); padding:14px 18px;}
+
+  /* ---------- WHO ---------- */
+  .persona{display:grid; gap:20px;}
+  @media(min-width:800px){ .persona{grid-template-columns:1.1fr 1fr;} }
+  .who{background:linear-gradient(158deg,var(--brand),#2456CC); color:#fff; border:none;}
+  .who .badge{display:inline-block; font-size:11px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; background:rgba(255,255,255,.2); padding:6px 12px; border-radius:999px; margin-bottom:16px;}
+  .who h3{font-size:27px; font-weight:800; margin-bottom:12px;}
+  .who p{color:rgba(255,255,255,.9); font-size:15px;}
+  .who .want{margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,.24); font-size:14.5px;}
+  .who .want b{color:#fff;}
+  .aside h4{font-size:16px; font-weight:800; margin-bottom:14px;}
+  .aside ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;}
+  .aside li{display:flex; gap:11px; font-size:14.5px; color:var(--ink2);}
+  .aside li .k{flex:0 0 auto; width:7px; height:7px; border-radius:50%; background:var(--mint); margin-top:8px;}
+
+  /* ---------- TECH ---------- */
+  .tech-card .id{font-size:12px; font-weight:800; color:var(--brand); margin-bottom:12px; letter-spacing:.03em;}
+  .tech-card h3{font-size:18px; font-weight:800; margin-bottom:9px;}
+  .tech-card p{color:var(--ink2); font-size:14.5px;}
+  .tile{width:44px; height:44px; border-radius:13px; background:var(--brand-wash); display:grid; place-items:center; margin-bottom:16px; box-shadow:inset 0 1px 1px rgba(255,255,255,.55);}
+  .tile svg{width:22px; height:22px; stroke:var(--brand); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round;}
+  .moat{margin-top:18px; background:linear-gradient(150deg,#16203A,#243b66); color:#fff; border:none; position:relative; overflow:hidden;}
+  .moat .glow{position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle,rgba(90,151,255,.45),transparent 70%); top:-130px; right:-70px;}
+  .moat .star{position:relative; font-size:12px; font-weight:800; letter-spacing:.13em; color:#FFD98A; margin-bottom:12px;}
+  .moat h3{position:relative; font-size:22px; font-weight:800; margin-bottom:11px;}
+  .moat p{position:relative; color:rgba(255,255,255,.87); font-size:15px; max-width:730px;}
+  .verdict{margin-top:16px; background:var(--brand-wash); border:1px dashed var(--brand); border-radius:var(--r-md); padding:18px 22px; font-size:14px; color:var(--ink2);}
+  .verdict b{color:var(--brand-ink);}
+  /* memory mini mockup */
+  .memcard{margin-top:18px; display:grid; gap:18px;}
+  @media(min-width:800px){ .memcard{grid-template-columns:1fr 1fr;} }
+  .memo{background:var(--card); border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--sh); padding:22px 24px;}
+  .memo .lbl{font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;}
+  .patrow{display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--line);}
+  .patrow:last-child{border-bottom:none;}
+  .patrow .nm{font-size:14px; font-weight:600;}
+  .patrow .ct{font-size:12px; font-weight:800; color:var(--coral); background:var(--coral-wash); padding:4px 10px; border-radius:999px;}
+  .tree{display:flex; flex-direction:column; gap:9px;}
+  .tnode{display:flex; align-items:center; gap:9px; font-size:13.5px;}
+  .tnode .d{width:9px; height:9px; border-radius:50%; flex:0 0 auto;}
+  .tnode.miss .d{background:var(--coral);} .tnode.miss{color:var(--ink);}
+  .tnode.ok .d{background:var(--mint);} .tnode.ok{color:var(--muted);}
+  .tnode .ln{flex:1; height:1px; background:var(--line2);}
+
+  /* ---------- PIPELINE ---------- */
+  .lbl2{font-size:13px; font-weight:800; letter-spacing:.03em; color:var(--brand-ink); margin:0 0 12px;}
+  .tblwrap{overflow-x:auto; border-radius:var(--r-md); box-shadow:var(--sh-s);}
+  table{width:100%; border-collapse:collapse; background:var(--card); font-size:14.5px; min-width:440px;}
+  th,td{padding:14px 16px; text-align:center; border-bottom:1px solid var(--line);}
+  th:first-child,td:first-child{text-align:left; font-weight:700;}
+  thead th{background:var(--brand-wash); color:var(--brand-ink); font-weight:700; font-size:13px; border-bottom:none;}
+  tbody tr:last-child td{border-bottom:none;}
+  .ok2{color:var(--mint-ink); font-weight:800; font-variant-numeric:tabular-nums;}
+  .b2b{display:grid; gap:18px; margin-top:20px;}
+  @media(min-width:800px){ .b2b{grid-template-columns:1fr 1fr;} }
+  .b2b .col{box-shadow:var(--sh-s);}
+  .b2b h4{margin:0 0 14px; font-size:15px; font-weight:800;}
+  .b2b h4 .flag{font-size:12px; font-weight:700; padding:4px 11px; border-radius:999px; margin-right:8px;}
+  .kr .flag{color:var(--brand-ink); background:var(--brand-wash);}
+  .us .flag{color:var(--mint-ink); background:var(--mint-wash);}
+  .b2b ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .b2b li{font-size:14.5px; color:var(--ink2); padding-left:16px; position:relative;}
+  .b2b li::before{content:""; position:absolute; left:0; top:9px; width:6px; height:6px; border-radius:2px; background:var(--line2);}
+  .note{margin-top:20px; font-size:13.5px; color:var(--muted);}
+  .note b{color:var(--ink2);}
+
+  /* ---------- VALUE ---------- */
+  .value{text-align:center; background:linear-gradient(160deg,var(--brand),#2154C4); color:#fff; border:none; padding:60px 34px; box-shadow:var(--sh-l);}
+  .value .q{font-size:clamp(21px,3.7vw,31px); font-weight:800; line-height:1.42; text-wrap:balance; max-width:780px; margin:0 auto;}
+  .value .cap{margin-top:22px; font-size:14px; color:rgba(255,255,255,.86); font-weight:600;}
+  .value .cap b{color:#fff;}
+
+  /* ---------- NEXT ---------- */
+  .branch{display:grid; gap:16px; margin-top:6px;}
+  @media(min-width:800px){ .branch{grid-template-columns:repeat(3,1fr);} }
+  .br{padding:24px; box-shadow:var(--sh-s);}
+  .br .t{font-size:12px; font-weight:800; letter-spacing:.05em; color:var(--brand); margin-bottom:9px;}
+  .br h4{font-size:17px; font-weight:800; margin-bottom:7px;}
+  .br p{font-size:13.5px; color:var(--ink2);}
+  .blanks{display:grid; gap:12px; margin-top:24px;}
+  @media(min-width:640px){ .blanks{grid-template-columns:1fr 1fr;} }
+  .blank{display:flex; gap:13px; align-items:flex-start; padding:16px 18px; border-radius:var(--r-md); background:var(--card); border:1.5px dashed var(--line2);}
+  .blank .box{flex:0 0 auto; width:19px; height:19px; border-radius:6px; border:1.5px dashed var(--muted); margin-top:2px;}
+  .blank h5{margin:0 0 3px; font-size:14px; font-weight:800;}
+  .blank p{font-size:12.5px; color:var(--muted);}
+  .foot{margin-top:34px; font-size:12.5px; color:var(--muted); text-align:center; border-top:1px solid var(--line2); padding-top:22px;}
+  .foot b{color:var(--ink2);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tabs" role="tablist" aria-label="소개서 섹션">
+    <div class="logo"><span class="mk">니</span><span>니가 교수</span></div>
+    <button data-go="home" aria-current="true">소개</button>
+    <button data-go="why">왜</button>
+    <button data-go="who">대상</button>
+    <button data-go="tech">기술</button>
+    <button data-go="pipe">파이프라인</button>
+    <button data-go="value">핵심가치</button>
+    <button data-go="next">다음</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ◆◆◆ 표지 (소개) ◆◆◆ -->
+<section class="page active home" id="home">
+  <div class="home-wrap">
+    <div>
+      <div class="chips rv">
+        <span class="chip"><b>URP</b> · 니가 교수</span>
+        <span class="chip">소개서 <b>v0.1</b></span>
+        <span class="chip">하나 소셜벤처 · 2026</span>
+      </div>
+      <h1 class="rv">혼자 푸는 시간 옆에,<br><span class="hl">앉는 선생님</span>을 만듭니다.</h1>
+      <p class="tag rv">손으로 써 내려간 풀이 과정을 읽어, 과외처럼 어디서·왜 틀렸는지 짚어줍니다. 누구나 감당할 수 있는 가격으로.</p>
+      <div class="north rv"><span class="s">★</span><p><b>이 자료의 목표.</b> 처음 보는 사람도, 이 한 장을 보고 우리 제품을 쓰고 싶어지도록.</p></div>
+      <div class="nextbar rv" style="border:none; margin-top:26px; padding:0; justify-content:flex-start;">
+        <button class="btn primary" data-go="why">왜 시작했는지부터 <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      </div>
+    </div>
+    <div class="rv">
+      <!-- 앱 화면 목업 (개념) -->
+      <div class="phone" aria-label="니가교수 앱 화면 예시">
+        <div class="screen">
+          <div class="sc-top"><div class="av">니</div><div><div class="nm">니가 교수</div><div class="st">● 지민이의 풀이를 보는 중</div></div></div>
+          <div class="paper">
+            <div class="q">Q. 2x − 5 = 3x + 1 을 풀어라</div>
+            <div class="hw">2x − 5 = 3x + 1<br>2x − 3x = 1 + 5<br><span class="flag">−x = 6</span><br>x = 6</div>
+          </div>
+          <div class="bubble">여기 <b>x = 6</b> 로 갔네요. 그 전 줄에서 부호를 한 번 볼까요? <b>−x = 6</b> 이면 x는 얼마가 될까요? 직접 말해봐요 🙂</div>
+          <div class="sc-input"><span>내 생각을 적어볼게요…</span><div class="go">↑</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ◆◆◆ 왜 시작했는가 ◆◆◆ -->
+<section class="page why" id="why">
+  <div class="rv"><span class="eyebrow coral">01 · 우리는 왜 시작했는가</span></div>
+  <h2 class="h-title rv">세 가지 마음이 겹쳐 있습니다.<br>순서가 곧 무게입니다.</h2>
+
+  <div class="why-card card rv">
+    <span class="n">1</span>
+    <div>
+      <h3>스스로 해내기 어려운 이들 곁에</h3>
+      <p>잘하고 싶은 마음은 있는데, 혼자 앉으면 어디서 막혔는지조차 모르는 학생들이 있습니다. 답은 채점받아도, 손으로 써 내려간 풀이 과정은 아무도 봐주지 않습니다. 그 사이에서 학습 격차가, 그리고 기회의 격차가 벌어집니다. 우리는 그 혼자 푸는 시간 옆에 앉습니다.</p>
+    </div>
+  </div>
+  <div class="why-card card rv">
+    <span class="n">2</span>
+    <div>
+      <h3>우리가 가진 최고를, 가장 귀한 일에</h3>
+      <p>우리가 만들 수 있는 최고의 기술을 아껴 두지 않습니다. 성적을 대신 내주는 도구가 아니라, 한 사람이 스스로 배움을 세워가도록 돕는 일 — 이것이 우리가 이 일을 하는 이유의 자리입니다.</p>
+    </div>
+  </div>
+  <div class="why-card card rv">
+    <span class="n">3</span>
+    <div>
+      <h3>교육이 닿기 어려운 곳에 먼저</h3>
+      <p>좋은 교육을 붙여주기 어려운 가정에 먼저 닿고 싶습니다. 교육급여·차상위 가정, 과외가 닿지 않는 지방 소도시, 그리고 해외 사역·선교 현장에서 자라는 아이들까지. 세계 어디에 있든, 손에 든 기기 하나로 나를 기억하는 선생님을 붙여줄 수 있다면.</p>
+    </div>
+  </div>
+  <div class="softnote rv">이 페이지는 대외용으로 정돈한 버전입니다. 창립 취지의 원문(신앙적 표현 포함)은 내부 기록에 그대로 보존되어 있습니다.</div>
+
+  <div class="nextbar rv">
+    <button class="btn ghost" data-go="home">← 표지</button>
+    <button class="btn primary" data-go="who">우리가 돕는 사람 <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+  </div>
+</section>
+
+<!-- ◆◆◆ 대상 (페르소나) ◆◆◆ -->
+<section class="page who-page" id="who">
+  <div class="rv"><span class="eyebrow">02 · 우리가 돕는 사람</span></div>
+  <h2 class="h-title rv">혼자 손으로 푸는 학생일수록,<br>과정을 봐줄 사람이 없습니다.</h2>
+  <p class="h-sub rv" style="margin-bottom:30px;">우리는 그 과정을 읽어 짚어줍니다.</p>
+  <div class="persona">
+    <div class="who card rv">
+      <span class="badge">핵심 페르소나</span>
+      <h3>중2 · 지민</h3>
+      <p>사교육비 부담이 큰 가정의 중학생. 콴다로 답은 맞춰보지만 시험만 보면 무너집니다. 혼자 해보려는 의지는 분명한데, 틀린 이유를 스스로 설명하지 못합니다. 부모가 풀이 과정을 봐줄 수는 없고, 사람 과외는 너무 비쌉니다.</p>
+      <div class="want"><b>지민이 원하는 건 하나.</b> 과외처럼 나만 봐주되, 감당할 수 있는 가격.</div>
+    </div>
+    <div class="aside card rv">
+      <h4>특별히 먼저 닿고 싶은 얼굴</h4>
+      <ul>
+        <li><span class="k"></span><span>해외 사역·선교 현장에서 자라는 자녀</span></li>
+        <li><span class="k"></span><span>교육급여·차상위 가정</span></li>
+        <li><span class="k"></span><span>과외가 닿지 않는 지방 소도시 학생</span></li>
+      </ul>
+      <p style="margin-top:16px; font-size:13px; color:var(--muted);">01의 셋째 마음이 여기서 구체적인 얼굴을 갖습니다.</p>
+    </div>
+  </div>
+  <div class="nextbar rv">
+    <button class="btn ghost" data-go="why">← 왜</button>
+    <button class="btn primary" data-go="tech">어떤 기술로 돕는가 <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+  </div>
+</section>
+
+<!-- ◆◆◆ 기술 (차별성) ◆◆◆ -->
+<section class="page tech-page" id="tech">
+  <div class="rv"><span class="eyebrow">03 · 어떤 기술로 돕는가</span></div>
+  <h2 class="h-title rv">시장은 세 개의 섬으로 나뉘어 있습니다.<br>우리는 그 셋을 잇는 다리에서 시작합니다.</h2>
+  <p class="h-sub rv" style="margin-bottom:30px;">상호작용 · 손글씨 · 지속성 — 21개사를 해부했지만, 셋을 동시에 잇는 곳은 없었습니다.</p>
+
+  <div class="grid g3 rv">
+    <div class="tech-card card">
+      <div class="tile"><svg viewBox="0 0 24 24"><path d="M8 10h8M8 14h5"/><path d="M21 12a8 8 0 01-11.5 7.2L3 21l1.8-6.5A8 8 0 1121 12z"/></svg></div>
+      <div class="id">① 상호작용</div>
+      <h3>걸음마다 이해를 확인하는 강의</h3>
+      <p>한 걸음씩 확인·보충하며 진행합니다. 모르면 그 자리에서 멈추고 물어봅니다. "설명할 수 있어야 이해한 것" — 직접 설명하게 해 안다는 착각을 걷어냅니다. 스스로 설명할 수 있을 때까지 끈질기게 돕는 플립러닝.</p>
+    </div>
+    <div class="tech-card card">
+      <div class="tile"><svg viewBox="0 0 24 24"><path d="M3 21l3-1 11-11a2.1 2.1 0 00-3-3L3 17l-1 4z"/><path d="M14 5l3 3"/></svg></div>
+      <div class="id">② 손글씨</div>
+      <h3>답이 아니라 '과정'을 진단</h3>
+      <p>대부분은 답만 인식할 뿐 풀이 과정은 보지 못합니다. 우리는 과정을 인식하는 데서 그치지 않고, 그 안의 오류를 진단·분석해 되돌려줍니다. 굿노트·삼성노트 같은 필기 경험과 AI 진단이 한 앱 안에.</p>
+    </div>
+    <div class="tech-card card">
+      <div class="tile"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><path d="M12 3a9 9 0 109 9"/><path d="M16 3l5 1-1 5"/></svg></div>
+      <div class="id">③ 지속성</div>
+      <h3>나를 기억하는 선생님</h3>
+      <p>매번 기억이 초기화되는 AI가 아닙니다. 나의 습관과 오답 패턴을 데이터로 쌓아 추적·교정하고, 개념지도로 나의 학습 구멍과 커리큘럼을 보여줍니다. 오랜만에 앉아도 나를 기억하는 튜터.</p>
+    </div>
+  </div>
+
+  <!-- 지속성 개념 화면 목업 -->
+  <div class="memcard rv">
+    <div class="memo">
+      <div class="lbl">지민이의 오답 패턴 · 자동 기록</div>
+      <div class="patrow"><span class="nm">부호 실수</span><span class="ct">최근 7회</span></div>
+      <div class="patrow"><span class="nm">식 변환에서 막힘</span><span class="ct">최근 4회</span></div>
+      <div class="patrow"><span class="nm">이항할 때 놓침</span><span class="ct">최근 3회</span></div>
+    </div>
+    <div class="memo">
+      <div class="lbl">개념지도 · 어디에 구멍이 있나</div>
+      <div class="tree">
+        <div class="tnode ok"><span class="d"></span>일차식의 계산<span class="ln"></span>✓</div>
+        <div class="tnode miss"><span class="d"></span>등식의 성질 · 이항<span class="ln"></span>보충 필요</div>
+        <div class="tnode miss"><span class="d"></span>일차방정식 활용<span class="ln"></span>대기</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="moat card rv">
+    <span class="glow"></span>
+    <div class="star">★ 기하 해자 — 아무도 못 하는 것</div>
+    <h3>손으로 그린 그래프와 복잡한 기하까지 읽습니다</h3>
+    <p>손으로 그린 그래프와 복잡한 기하 모델까지 인식해 풀이를 교정하고 상호작용합니다. 조사한 21개사 전부 이 기능이 없습니다(MyScript만 도형을 인식하나 교육적 진단은 없음). 기술 난도가 높고 가장 모방하기 어려운, 가장 방어 가능한 해자입니다.</p>
+  </div>
+  <div class="verdict rv"><b>경쟁 한 줄 결론.</b> 손글씨는 3층위로 갈립니다. Lv1 사진 촬영(콴다·Photomath), Lv2 실시간 인식(스터디에이·수학대왕), <b>Lv3 과정 오류 진단 + 도형·그래프 인식 = 니가교수, 경쟁자 없음.</b></div>
+
+  <div class="nextbar rv">
+    <button class="btn ghost" data-go="who">← 대상</button>
+    <button class="btn primary" data-go="pipe">누구에게 닿는가 <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+  </div>
+</section>
+
+<!-- ◆◆◆ 파이프라인 ◆◆◆ -->
+<section class="page pipe-page" id="pipe">
+  <div class="rv"><span class="eyebrow">04 · 우리의 파이프라인</span></div>
+  <h2 class="h-title rv">닿을 수 있는 대상을 넓게 펼쳐둡니다.</h2>
+  <p class="h-sub rv" style="margin-bottom:30px;">우선순위는 미국·글로벌 개인 B2C 우선 — 학원 B2B는 완성분을 유지합니다.</p>
+
+  <div class="rv">
+    <p class="lbl2">B2C · 개인 수학 학습자</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>구분</th><th>초등</th><th>중등</th><th>고등</th><th>대학</th></tr></thead>
+        <tbody>
+          <tr><td>해외</td><td class="ok2">○</td><td class="ok2">○</td><td class="ok2">○</td><td class="ok2">○</td></tr>
+          <tr><td>국내</td><td class="ok2">○</td><td class="ok2">○</td><td class="ok2">○</td><td class="ok2">○</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="rv">
+    <p class="lbl2" style="margin-top:26px;">B2B · 기관 · 사업자</p>
+    <div class="b2b">
+      <div class="col card kr">
+        <h4><span class="flag">한국 수학</span></h4>
+        <ul><li>중·고등 수학학원</li><li>홈스쿨링 가정</li><li>국내 사이버 대학교</li><li>독학재수학원</li><li>공부방</li></ul>
+      </div>
+      <div class="col card us">
+        <h4><span class="flag">미국 수학</span></h4>
+        <ul><li>미국 공교육</li><li>미국 홈스쿨링 기업</li><li>국내 국제학교</li><li>유학원</li><li>GRE · AP · IB 학원</li></ul>
+      </div>
+    </div>
+  </div>
+  <p class="note rv"><b>읽는 법.</b> 이 표는 "시장이 이만큼 넓다"는 지도이지, 동시에 다 친다는 뜻이 아닙니다. 실제 진입 순서·웨지는 다음 페이지의 공란(시장조사·수익모델)에서 좁힙니다. 현재 확정된 첫 축은 미국·글로벌 개인 B2C.</p>
+
+  <div class="nextbar rv">
+    <button class="btn ghost" data-go="tech">← 기술</button>
+    <button class="btn primary" data-go="value">우리의 핵심가치 <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+  </div>
+</section>
+
+<!-- ◆◆◆ 핵심가치 ◆◆◆ -->
+<section class="page value-page" id="value">
+  <div class="rv" style="text-align:center; margin-bottom:26px;"><span class="eyebrow">05 · 핵심가치</span></div>
+  <div class="value card rv">
+    <p class="q">"손글씨 풀이 과정을 읽어, 과외처럼 어디서·왜 틀렸는지 짚어주되, 누구나 감당할 가격으로 — 교육 격차를 좁힙니다."</p>
+    <p class="cap">한 줄 압축 · <b>과외의 과정 지도 × 앱의 접근성</b></p>
+  </div>
+  <div class="nextbar rv">
+    <button class="btn ghost" data-go="pipe">← 파이프라인</button>
+    <button class="btn primary" data-go="next">다음 걸음 <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+  </div>
+</section>
+
+<!-- ◆◆◆ 다음 (분기 + 공란) ◆◆◆ -->
+<section class="page next-page" id="next">
+  <div class="rv"><span class="eyebrow">다음 걸음</span></div>
+  <h2 class="h-title rv">이 척추에서, 세 소개서로 뻗어나갑니다.</h2>
+  <div class="branch rv">
+    <div class="br card"><div class="t">제품 소개서</div><h4>무엇을 만들었나</h4><p>차별성 3축 + 기하 해자. 앱과 엔진 자체를 가장 선명하게.</p></div>
+    <div class="br card"><div class="t">플랫폼 소개서</div><h4>어떻게 연결·확장되나</h4><p>B2C·B2B 파이프라인, 데이터 축적, 엔진 교체 가능 구조.</p></div>
+    <div class="br card"><div class="t">서비스 소개서</div><h4>어떻게 경험하나</h4><p>지민의 하루, 온보딩→진단→학습→리포트→피드백 여정.</p></div>
+  </div>
+
+  <div class="rv" style="margin-top:36px;"><span class="eyebrow mint">아직 비어 있는 칸 · 팀이 채웁니다</span></div>
+  <div class="blanks">
+    <div class="blank rv"><span class="box"></span><div><h5>수익모델</h5><p>B2C 구독·B2B 라이선스, 자체 시험/랭킹, 프랜차이즈 로열티</p></div></div>
+    <div class="blank rv"><span class="box"></span><div><h5>시장조사</h5><p>TAM·SAM·SOM, 국내외 에듀테크 규모, 근거 수치</p></div></div>
+    <div class="blank rv"><span class="box"></span><div><h5>소셜 임팩트 규모</h5><p>무상 지원 목표 인원, 선정 기준, 네트워크 연계</p></div></div>
+    <div class="blank rv"><span class="box"></span><div><h5>영상 · 목업</h5><p>제품 데모 영상, 실제 앱 스크린샷</p></div></div>
+    <div class="blank rv"><span class="box"></span><div><h5>팀 소개</h5><p>구성원·역할·왜 우리가 해내는가</p></div></div>
+    <div class="blank rv"><span class="box"></span><div><h5>재무 · 마일스톤</h5><p>베타 출시 시점, 초기 비용, 투자 방향</p></div></div>
+  </div>
+
+  <p class="foot rv">편집 원본은 옵시디언 <b>business/소개서-공통척추-v0.1.md</b> · 이 사이트는 그걸 보여주는 얼굴입니다 · <b>URP Corporation</b> 대외비</p>
+
+  <div class="nextbar rv">
+    <button class="btn ghost" data-go="value">← 핵심가치</button>
+    <button class="btn primary" data-go="home">처음으로 <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+  </div>
+</section>
+
+</main>
+
+<script>
+  var pages = ["home","why","who","tech","pipe","value","next"];
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs button'));
+
+  function show(id, push){
+    if(pages.indexOf(id)===-1){ id="home"; }
+    document.querySelectorAll('.page').forEach(function(p){ p.classList.toggle('active', p.id===id); });
+    tabs.forEach(function(t){ t.setAttribute('aria-current', t.getAttribute('data-go')===id ? 'true':'false'); });
+    if(push!==false && ('#'+id)!==location.hash){ history.pushState(null,'', '#'+id); }
+    window.scrollTo({top:0, behavior: (push===false?'auto':'smooth')});
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-go]');
+    if(b){ e.preventDefault(); show(b.getAttribute('data-go')); }
+  });
+  window.addEventListener('popstate', function(){ show((location.hash||'#home').slice(1), false); });
+  show((location.hash||'#home').slice(1), false);
+</script>
+</body>
+</html>
