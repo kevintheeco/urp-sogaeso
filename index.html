@@ -210,8 +210,11 @@
   .ax:hover .nm{color:var(--brand-deep);}
   .ax:focus-visible{outline:2px solid var(--brand); outline-offset:3px; border-radius:8px;}
   .ax .more{display:block; overflow:hidden; max-height:0; transition:max-height .45s var(--e);}
-  .ax .more p{margin:0;}
-  .ax .more p{color:var(--ink2); font-size:14.5px; line-height:1.72; padding:0 26px 20px 25px;}
+  .ax .more .lead + .pt{margin-top:0;}
+  .ax .more .inner{display:block; padding:0 24px 22px 25px;}
+  .ax .more .lead{display:block; color:var(--ink); font-weight:700; font-size:15px; letter-spacing:-.02em; margin-bottom:13px;}
+  .ax .more .pt{display:block; position:relative; padding-left:18px; color:var(--ink2); font-size:14px; line-height:1.6; margin-top:9px;}
+  .ax .more .pt::before{content:""; position:absolute; left:2px; top:9px; width:5px; height:5px; border-radius:2px; background:var(--brand); opacity:.6;}
   .lv3{margin-top:26px; font-size:15.5px; line-height:1.55; padding-left:20px; border-left:3px solid var(--brand);}
   .lv3 b{color:var(--brand-deep); font-weight:800;}
   /* venn: 축을 누르면 해당 원 강조 */
@@ -468,15 +471,15 @@
         <div class="axes" id="axes">
           <button class="ax" data-axis="interaction" aria-expanded="false">
             <span class="arow"><span class="dot" style="background:#EC5E2A;"></span><span class="atx"><span class="nm">상호작용</span><span class="dc">걸음마다 이해를 확인하고, 직접 설명하게 한다.</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="more"><p>한 걸음씩 이해를 확인·보충하며 진행합니다. 모르면 그 자리에서 멈추고 물어봅니다 — 스크린샷·검색으로 앱을 옮겨다니는 불편 없이. 핵심은 "설명할 수 있어야 이해한 것"입니다. 안다고 착각하지 않도록 학생이 직접 설명하게 해 스스로의 지식을 점검합니다. 모른다 → 풀이 제공 → 다시 모른다에서 끝나지 않고, 내가 설명할 수 있을 때까지 끈질기게 돕는 플립러닝.</p></span>
+            <span class="more"><span class="inner"><span class="lead">한 걸음씩 이해를 확인하며 나아가는 강의입니다.</span><span class="pt">모르면 그 자리에서 멈추고 물어봅니다. 스크린샷·검색으로 앱을 옮겨다닐 필요 없이.</span><span class="pt">"설명할 수 있어야 이해한 것." 직접 설명하게 해 안다는 착각을 걷어냅니다.</span><span class="pt">모른다 → 풀이 → 다시 모른다에서 끝나지 않고, 설명할 수 있을 때까지 돕는 플립러닝.</span></span></span>
           </button>
           <button class="ax" data-axis="hand" aria-expanded="false">
             <span class="arow"><span class="dot" style="background:#3E6E8E;"></span><span class="atx"><span class="nm">손글씨</span><span class="dc">답이 아니라 풀이 과정의 오류를 진단한다.</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="more"><p>대부분의 앱은 손글씨에서 '정답'만 인식합니다. 우리는 손으로 써 내려간 풀이 '과정'을 읽습니다. 어느 단계에서·왜 틀렸는지, 정답이어도 그 안에 논리적 구멍은 없는지까지 진단합니다. 굿노트·삼성노트 같은 필기 경험과 AI 진단이 한 앱 안에. 나아가 손으로 그린 그래프·복잡한 기하 도형까지 인식·교정하는데, 조사한 21개사 전부 이 조합(Lv3)이 없습니다.</p></span>
+            <span class="more"><span class="inner"><span class="lead">정답이 아니라, 손으로 쓴 풀이 '과정'을 읽습니다.</span><span class="pt">대부분의 앱은 정답만 인식합니다. 우리는 어느 단계에서·왜 틀렸는지를 봅니다.</span><span class="pt">정답이어도 그 안의 논리적 구멍까지 찾아냅니다.</span><span class="pt">손으로 그린 그래프·기하 도형까지 인식·교정 — 21개사 중 이 조합(Lv3)은 우리뿐입니다.</span></span></span>
           </button>
           <button class="ax" data-axis="persist" aria-expanded="false">
             <span class="arow"><span class="dot" style="background:#5B8C5A;"></span><span class="atx"><span class="nm">지속성</span><span class="dc">나를 기억하고, 오답 패턴을 추적·교정한다.</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="more"><p>매번 나에 대한 기억이 초기화되는 AI가 아닙니다. 나의 습관과 오답 패턴(부호 실수, 식 변환의 어려움 등)을 데이터로 쌓아 추적·교정하고, 개념지도로 나의 학습 구멍과 앞으로의 커리큘럼을 보여줍니다. 오랜만에 다시 앉아도 나를 기억하는 튜터. 세션을 넘어 축적되는 이 지속성이 상호작용·손글씨와 결합될 때, 진짜 '나만의 과외'가 됩니다.</p></span>
+            <span class="more"><span class="inner"><span class="lead">매번 초기화되지 않는, 나를 기억하는 튜터입니다.</span><span class="pt">오답 패턴(부호 실수·식 변환 등)을 데이터로 쌓아 추적·교정합니다.</span><span class="pt">개념지도로 내 학습 구멍과 다음 커리큘럼을 보여줍니다.</span><span class="pt">오랜만에 앉아도 나를 기억 — 상호작용·손글씨와 만나 '나만의 과외'가 됩니다.</span></span></span>
           </button>
         </div>
         <p class="lv3">손글씨는 세 층위로 갈립니다. <b>Lv3 — 과정 진단에 도형·그래프 인식까지. 여기 선 곳은 니가교수뿐입니다.</b></p>
