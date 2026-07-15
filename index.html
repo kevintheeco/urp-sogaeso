@@ -273,23 +273,24 @@
   .prob-intro{max-width:30ch; margin-bottom:8px;}
   .prob-intro h2{font-size:clamp(27px,4.4vw,44px); font-weight:800; line-height:1.16; margin-top:18px;}
   .prob-intro .sub{color:var(--ondark2); font-size:16.5px; margin-top:16px; max-width:46ch;}
-  .persona{display:grid; gap:40px; align-items:center; padding:84px 0;}
-  @media(min-width:860px){ .persona{grid-template-columns:1fr 1fr; gap:64px;} .persona.flip .portrait-wrap{order:2;} }
-  .portrait-wrap{width:100%;}
-  .portrait{position:relative; width:100%; aspect-ratio:3/4;}
-  .portrait img, .portrait video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;}
-  .portrait::after{content:""; position:absolute; inset:-2px; pointer-events:none;
-    background:
-      linear-gradient(to right, var(--dark) 0%, rgba(20,19,16,0) 18%, rgba(20,19,16,0) 82%, var(--dark) 100%),
-      linear-gradient(to bottom, var(--dark) 0%, rgba(20,19,16,0) 16%, rgba(20,19,16,0) 84%, var(--dark) 100%);}
-  .p-body .tag{display:inline-flex; align-items:center; font-size:12px; font-weight:700; letter-spacing:.03em; color:var(--brand-d); background:var(--brand-soft-d); padding:6px 13px; border-radius:999px;}
-  .p-body .who2{margin-top:16px; font-size:13.5px; color:var(--ondark2); font-weight:600; letter-spacing:.01em;}
-  .p-body .quote{margin-top:8px; font-family:var(--serif); font-weight:400; font-size:clamp(22px,3.3vw,33px); line-height:1.44; letter-spacing:-.02em; color:var(--ondark); text-wrap:balance;}
+  .persona{display:grid; gap:44px; align-items:center; padding:96px 0;}
+  @media(min-width:860px){ .persona{grid-template-columns:1fr 1fr; gap:56px;} .persona.flip .portrait-wrap{order:2;} }
+  .portrait-wrap{width:100%; position:relative; display:grid; place-items:center;}
+  .portrait-wrap::before{content:""; position:absolute; width:72%; aspect-ratio:1; border-radius:50%;
+    background:radial-gradient(circle, rgba(236,94,42,.09), transparent 66%); filter:blur(30px); pointer-events:none;}
+  .portrait{position:relative; width:min(100%,430px); aspect-ratio:3/4; border-radius:50%; overflow:hidden; isolation:isolate; transform:translateZ(0);}
+  .portrait img, .portrait video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 32%;}
+  .portrait::after{content:""; position:absolute; inset:-1px; border-radius:50%; pointer-events:none;
+    background:radial-gradient(closest-side, rgba(20,19,16,0) 55%, rgba(20,19,16,.22) 78%, rgba(20,19,16,.72) 92%, var(--dark) 99%);}
+  .p-body{text-align:center; max-width:46ch; margin-inline:auto;}
+  .p-body .tag{display:inline-flex; align-items:center; font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--brand-d); background:var(--brand-soft-d); padding:7px 15px; border-radius:999px;}
+  .p-body .who2{margin-top:20px; font-size:13.5px; color:var(--ondark2); font-weight:600; letter-spacing:.06em;}
+  .p-body .quote{margin-top:12px; font-family:var(--serif); font-weight:400; font-size:clamp(23px,3.2vw,34px); line-height:1.52; letter-spacing:-.015em; color:var(--ondark); text-wrap:balance;}
   .p-body .quote br{display:none;}
   @media(min-width:600px){ .p-body .quote br{display:inline;} }
   .p-body .quote::before{content:"\201C"; color:var(--brand-d);}
   .p-body .quote::after{content:"\201D"; color:var(--brand-d);}
-  .p-body .support{margin-top:16px; color:var(--ondark2); font-size:15px; line-height:1.7; max-width:46ch;}
+  .p-body .support{margin-top:18px; color:var(--ondark2); font-size:16.5px; line-height:1.85; max-width:34ch; margin-inline:auto; text-wrap:pretty;}
   .prob-out{text-align:center; padding:104px 0 8px;}
   .prob-out .big{font-family:var(--serif); font-weight:400; font-size:clamp(26px,4.6vw,46px); line-height:1.34; color:var(--ondark); text-wrap:balance; max-width:22ch; margin:0 auto;}
   .prob-out .big em{font-style:normal; color:var(--brand-d); font-weight:700;}
@@ -344,7 +345,7 @@
   <span class="aura"></span>
   <div class="wrap">
     <div class="tagrow rv"><span>URP CORPORATION</span><span class="l"></span><span>2026 · AI 자기주도 학습</span></div>
-    <h1 class="rv d1">설명할 수 있어야,<br><em>진짜 아는 것이다.</em></h1>
+    <h1 class="rv d1">설명할 수 있어야, <br><em>진짜 아는 것이다.</em></h1>
     <p class="lead rv d2">학생이 <b>스스로 설명하게</b> 만들고, 그 과정을 분석해 약점을 채웁니다. 니가 교수는 정답이 아니라 '과정'을 봅니다.</p>
     <div class="prod rv d3">
       <div class="lock"><span class="mk">니</span><div><div class="nm">니가 교수</div><div class="en">YOU ARE PROFESSOR</div></div></div>
@@ -450,8 +451,8 @@
       <div class="p-body">
         <span class="tag">대학생 · 일방향 강의</span>
         <div class="who2">지훈 · 대학교 2학년</div>
-        <p class="quote">강의는 끝났는데,<br>집에 오면 처음부터 혼자 다시 시작이에요.</p>
-        <p class="support">대형 강의에서 질문하며 따라가는 사람은 드뭅니다. 전공책은 어렵고, 매번 AI에게 처음부터 설명해달라 하기도 지칩니다.</p>
+        <p class="quote">강의는 끝났는데, <br>집에 오면 처음부터 혼자 다시&nbsp;시작이에요.</p>
+        <p class="support">대형 강의에서 질문하며 따라가는 사람은 드뭅니다. 전공책은 어렵고, 매번 AI에게 처음부터 설명해달라 하기도&nbsp;지칩니다.</p>
       </div>
     </div>
 
@@ -461,7 +462,7 @@
       <div class="p-body">
         <span class="tag">고3 이과 · 손풀이</span>
         <div class="who2">서연 · 고등학교 3학년</div>
-        <p class="quote">내가 그린 그래프는,<br>AI도 못 알아봐요.</p>
+        <p class="quote">내가 그린 그래프는, <br>AI도 못 알아봐요.</p>
         <p class="support">풀 때마다 사진을 찍어 올리는 것도 번거로운데, 대화가 길어지면 저를 처음부터 다시 가르쳐야 해요. 손으로 그린 기하와 그래프는 인식조차 되지 않고요.</p>
       </div>
     </div>
@@ -472,8 +473,8 @@
       <div class="p-body">
         <span class="tag">예체능 → 수학</span>
         <div class="who2">다은 · 고등학교 2학년</div>
-        <p class="quote">중2 이후 놓았던 수학을,<br>고2에 다시 펴자니 막막해요.</p>
-        <p class="support">어디서부터 비어 있는지 저도 모르겠어요. 저를 아는 선생님도, 지난 기록도 없으니까요.</p>
+        <p class="quote">중2 이후 놓았던 수학을, <br>고2에 다시 펴자니 막막해요.</p>
+        <p class="support">어디서부터 비어 있는지 저도 모르겠어요. 저를 아는&nbsp;선생님도, 지난 기록도 없으니까요.</p>
       </div>
     </div>
 
@@ -483,8 +484,8 @@
       <div class="p-body">
         <span class="tag">유학 준비 · SAT/AP</span>
         <div class="who2">준 · 국제학교 11학년</div>
-        <p class="quote">시급 8만&nbsp;원 과외를,<br>매일 붙일 순 없잖아요.</p>
-        <p class="support">과외와 과외 사이, 혼자 푸는 시간을 채워줄 것이 필요해요. 그런데 시중엔 마땅한 게 없어요.</p>
+        <p class="quote">시급 8만&nbsp;원 과외를, <br>매일 붙일 순 없잖아요.</p>
+        <p class="support">과외와 과외 사이, 혼자 푸는 시간을 채워줄 것이&nbsp;필요해요. 그런데 시중엔 마땅한 게&nbsp;없어요.</p>
       </div>
     </div>
 
@@ -494,7 +495,7 @@
       <div class="p-body">
         <span class="tag">교육 격차 · 우리의 비전</span>
         <div class="who2">민서 · 중학교 3학년 · 지방 소도시</div>
-        <p class="quote">나를 아는 선생님이 없으면,<br>잘 가고 있는지조차 알 수&nbsp;없어요.</p>
+        <p class="quote">나를 아는 선생님이 없으면, <br>잘 가고 있는지조차 알 수&nbsp;없어요.</p>
         <p class="support">고액 과외는 멀고, AI마저 매달 큰 비용을 요구해요. 우리가 가장 먼저 닿고 싶은 자리입니다.</p>
       </div>
     </div>
