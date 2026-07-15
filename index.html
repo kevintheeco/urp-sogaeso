@@ -278,7 +278,7 @@
   .portrait-wrap{width:100%;}
   .portrait{position:relative; width:100%; max-width:400px; aspect-ratio:4/5; border-radius:22px; overflow:hidden; box-shadow:var(--sh);}
   .persona.flip .portrait{margin-left:auto;}
-  .portrait img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;}
+  .portrait img, .portrait video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; z-index:2;}
   .portrait .ph{position:absolute; inset:0; z-index:1; display:grid; place-items:center; text-align:center;
     background:radial-gradient(120% 75% at 50% 12%, rgba(236,94,42,.15), transparent 58%), linear-gradient(158deg,#241f19,#141210);}
   .portrait .ph .sil{width:84px; height:84px; border-radius:50%; background:rgba(255,255,255,.045); display:grid; place-items:center; margin:0 auto 16px;}
@@ -436,7 +436,7 @@
 </section>
 
 <!-- ◆◆◆ 페르소나 · 공감 갤러리 ◆◆◆
-     인물 사진: assets/personas/p1.jpg ~ p5.jpg 를 넣으면 자동으로 채워집니다 (없으면 디자인 placeholder) -->
+     인물 영상: assets/personas/p1.mp4 ~ p5.mp4 (포스터 p1~p5_poster.jpg, 힉스필드 제작 무음 다큐 컷) -->
 <section class="zone-dark pad" id="you">
   <div class="wrap">
     <div class="prob-intro rv">
@@ -447,7 +447,7 @@
 
     <div class="persona rv">
       <div class="portrait-wrap"><div class="portrait">
-        <img src="assets/personas/p1.jpg" alt="지훈, 일방향 강의에 지친 대학생" onerror="this.style.display='none'">
+        <video src="assets/personas/p1.mp4" poster="assets/personas/p1_poster.jpg" muted loop playsinline preload="metadata" aria-label="지훈의 이야기 — 강의실과 자취방"></video>
         <div class="ph"><div><span class="sil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c0-4.4 3.4-7.5 7.5-7.5s7.5 3.1 7.5 7.5"/></svg></span><b>인물 사진</b><i>힉스필드 예정</i></div></div>
       </div></div>
       <div class="p-body">
@@ -460,7 +460,7 @@
 
     <div class="persona flip rv">
       <div class="portrait-wrap"><div class="portrait">
-        <img src="assets/personas/p2.jpg" alt="서연, 손풀이 촬영에 지친 고등학생" onerror="this.style.display='none'">
+        <video src="assets/personas/p2.mp4" poster="assets/personas/p2_poster.jpg" muted loop playsinline preload="metadata" aria-label="서연의 이야기 — 손풀이 노트와 폰"></video>
         <div class="ph"><div><span class="sil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c0-4.4 3.4-7.5 7.5-7.5s7.5 3.1 7.5 7.5"/></svg></span><b>인물 사진</b><i>힉스필드 예정</i></div></div>
       </div></div>
       <div class="p-body">
@@ -473,7 +473,7 @@
 
     <div class="persona rv">
       <div class="portrait-wrap"><div class="portrait">
-        <img src="assets/personas/p3.jpg" alt="다은, 오랜만에 수학을 다시 잡은 학생" onerror="this.style.display='none'">
+        <video src="assets/personas/p3.mp4" poster="assets/personas/p3_poster.jpg" muted loop playsinline preload="metadata" aria-label="다은의 이야기 — 오랜만에 다시 편 수학"></video>
         <div class="ph"><div><span class="sil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c0-4.4 3.4-7.5 7.5-7.5s7.5 3.1 7.5 7.5"/></svg></span><b>인물 사진</b><i>힉스필드 예정</i></div></div>
       </div></div>
       <div class="p-body">
@@ -486,7 +486,7 @@
 
     <div class="persona flip rv">
       <div class="portrait-wrap"><div class="portrait">
-        <img src="assets/personas/p4.jpg" alt="준, 고액 과외를 보완하려는 유학 준비생" onerror="this.style.display='none'">
+        <video src="assets/personas/p4.mp4" poster="assets/personas/p4_poster.jpg" muted loop playsinline preload="metadata" aria-label="준의 이야기 — SAT 혼자 공부하는 밤"></video>
         <div class="ph"><div><span class="sil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c0-4.4 3.4-7.5 7.5-7.5s7.5 3.1 7.5 7.5"/></svg></span><b>인물 사진</b><i>힉스필드 예정</i></div></div>
       </div></div>
       <div class="p-body">
@@ -499,7 +499,7 @@
 
     <div class="persona rv">
       <div class="portrait-wrap"><div class="portrait">
-        <img src="assets/personas/p5.jpg" alt="민서, 사교육이 어려운 형편의 학생" onerror="this.style.display='none'">
+        <video src="assets/personas/p5.mp4" poster="assets/personas/p5_poster.jpg" muted loop playsinline preload="metadata" aria-label="민서의 이야기 — 노을 지는 부엌 식탁"></video>
         <div class="ph"><div><span class="sil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c0-4.4 3.4-7.5 7.5-7.5s7.5 3.1 7.5 7.5"/></svg></span><b>인물 사진</b><i>힉스필드 예정</i></div></div>
       </div></div>
       <div class="p-body">
@@ -688,6 +688,17 @@
   var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); if(e.target.id==='venn'){ e.target.classList.add('go'); } io.unobserve(e.target); } }); },{threshold:.16, rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv').forEach(function(e){io.observe(e);});
   var venn=document.getElementById('venn'); if(venn){ io.observe(venn); }
+
+  // 페르소나 영상: 화면에 보일 때만 재생, 모션 최소화 설정이면 포스터 정지화면 유지
+  var pvids=document.querySelectorAll('.portrait video');
+  if(pvids.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+    var vio=new IntersectionObserver(function(es){ es.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){ var pr=v.play(); if(pr && pr.catch){ pr.catch(function(){}); } }
+      else{ v.pause(); }
+    }); },{threshold:.25});
+    pvids.forEach(function(v){ vio.observe(v); });
+  }
 
   // 축 아코디언 + 밴다이어그램 강조
   var axesEl=document.getElementById('axes');
