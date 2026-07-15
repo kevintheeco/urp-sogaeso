@@ -234,7 +234,8 @@
   .vgrid{display:grid; gap:44px; align-items:center;}
   .vgrid>*{min-width:0;}
   @media(min-width:920px){ .vgrid{grid-template-columns:1.05fr .95fr;} }
-  .venn{width:100%; max-width:560px; margin:0 auto; display:block; overflow:visible;}
+  .venn{width:100%; max-width:720px; margin:0 auto; display:block; overflow:visible;}
+  @media(max-width:600px){ .venn{width:calc(100% + 32px); margin-left:-16px; max-width:none;} }
   .venn text{font-family:var(--f);}
   .venn .circ{opacity:0; transform-box:fill-box; transform-origin:center; transform:scale(.62); transition:opacity 1s var(--e), transform 1.15s var(--e), fill-opacity .45s var(--e), stroke-opacity .45s var(--e);}
   .venn.go .circ{opacity:1; transform:scale(1);}
